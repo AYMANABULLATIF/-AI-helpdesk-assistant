@@ -1,6 +1,6 @@
 # AI Helpdesk Support Assistant
 
-A portfolio-ready Streamlit application that demonstrates Tier-1 IT helpdesk workflows, AI-assisted ticket triage, and a small local RAG-style knowledge base assistant.
+A portfolio-ready Streamlit application that demonstrates Tier-1 IT helpdesk workflows, AI-assisted ticket triage, bilingual English/Japanese support, and a small local RAG-style knowledge base assistant.
 
 The project is intentionally scoped as a practical MVP that can be completed and explained in 1-2 days. It focuses on realistic support scenarios instead of overengineered infrastructure.
 
@@ -12,6 +12,7 @@ Helpdesk technicians regularly classify tickets, identify priority, communicate 
 - Suggests first troubleshooting steps based on common Tier-1 support practices.
 - Searches a local IT knowledge base for relevant procedures.
 - Produces professional first-response messages suitable for a service desk environment.
+- Supports English and Japanese UI/output for a Japan-based IT support portfolio.
 - Shows awareness of escalation paths for Network, Desktop Support, Messaging, IAM, and Security teams.
 
 ## Features
@@ -34,6 +35,8 @@ The app returns:
 - First troubleshooting steps
 - A short professional first-response message
 
+The sidebar language toggle switches the UI and generated ticket response between English and polite, natural Japanese.
+
 ### Knowledge Base Search
 
 The app includes a local `knowledge_base/` folder with realistic sample documents for:
@@ -51,6 +54,8 @@ Technicians can ask questions such as:
 
 The app retrieves relevant knowledge base content with a simple local keyword search and generates an answer grounded in the available documents.
 
+The knowledge base documents are currently written in English, but Japanese questions are supported through Japanese-to-English IT keyword mappings for common terms such as VPN, メール, パスワード, アカウント, プリンター, ネットワーク, 遅い, ログイン, and 接続できない.
+
 ### Local Fallback Mode
 
 If a Gemini API key is not configured, the app still runs using a local rule-based fallback. This makes the project easy to demo during interviews or on a resume without exposing API keys.
@@ -61,6 +66,7 @@ If a Gemini API key is not configured, the app still runs using a local rule-bas
 - Streamlit
 - Google Gemini API through `google-generativeai`
 - Local keyword-based knowledge base search
+- Bilingual English/Japanese UI and response support
 - Markdown, text, and PDF knowledge base loading
 - python-dotenv for environment variables
 
